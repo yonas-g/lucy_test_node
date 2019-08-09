@@ -1,5 +1,4 @@
 {
-  "name": "sample_webservice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +12,10 @@
     "dotenv": "^8.0.0",
     "ejs": "^2.6.2",
     "express": "^4.17.1",
+    "moment": "^2.24.0",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "request-promise-native": "^1.0.7",
+    "uuid": "^3.3.2",
+    "whatwg-fetch": "^3.0.0"
   }
 }

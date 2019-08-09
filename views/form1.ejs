@@ -1,0 +1,79 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+  <head>
+    <title>simple form</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <%= message %>
+    <div class="container">
+      <h2>Invoice Sender Form</h2>
+      <form role="form" name="form1" method="POST" action="/form">
+        <div class="form-group">
+          <label for="phone">From:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            name="phone"
+            placeholder="Enter phone number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input
+            type="amount"
+            class="form-control"
+            id="amount"
+            name="amount"
+            placeholder="Enter the amount"
+          />
+        </div>
+        <div class="form-group">
+          <label for="desc">Description:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="desc"
+            name="description"
+            placeholder="Description"
+          />
+        </div>
+        <div>
+          <label>Agent 1 </label>
+          <input
+            type="radio"
+            name="radio"
+            id="sizeMed1"
+            value="kidus"
+            checked="checked"
+          />
+          <label>Agent 2 </label>
+          <input type="radio" name="radio" id="sizeMed2" value="yemane" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div id="d1">
+      <script>
+        /* function displayRadioValue() {
+                 var ele = document.getElementsByName('radio');
+
+                 for (i = 0; i < ele.length; i++) {
+                     if (ele[i].checked)
+                         document.getElementById("d1").innerHTML
+                             = +ele[i].value;
+                 }
+             } */
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>server response</title>
+    <style>
+      .invoice {
+        display: block;
+        clear: both;
+        border: 1px solid black;
+        float: none;
+      }
+    </style>
+  </head>
+  <body>
+    <% Object.keys(data).forEach(key => { %>
+    <div class="invoice"><%= key %> : <%= data[key]%></div>
+    <% }) %>
+  </body>
+</html>
