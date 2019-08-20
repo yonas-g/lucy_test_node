@@ -85,4 +85,3 @@ const hellocash = {
     }
 }
 
-hellocash.login("1416563","lucy1234").then((res)=>{console.log(res)},(err)=>{console.log(err)});
