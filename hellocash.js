@@ -85,3 +85,5 @@ const hellocash = {
     }
 }
 
+exports = hellocash
+
