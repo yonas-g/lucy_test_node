@@ -85,30 +85,4 @@ const hellocash = {
     }
 }
 
-hellocash.login("1416563","lucy1234").then(res=>{
-    //console.log(res);
-    var invoice = {
-        "amount": 10,
-        "description": "",
-        "from": "+2519",
-        "currency": "ETB",
-        "tracenumber": uuid(),
-        "notifyfrom": true,
-        "notifyto": true,
-        "expires": ""
-    }
-    var transfer = {
-        "amount": 1,
-        "description": "",
-        "to": "+251944233167",
-        "currency": "ETB",
-        "tracenumber": uuid(),
-        "referenceid": uuid(),
-        "notifyfrom": true,
-        "notifyto": true
-    }
-    hellocash.validateTransfer(transfer,res).then(res=>console.log(res),err=>console.log(err.response.data));
-   
-},err=>{
-    console.log(err.data);
-});
+hellocash.login("1416563","lucy1234").then((res)=>{console.log(res)},(err)=>{console.log(err)});
