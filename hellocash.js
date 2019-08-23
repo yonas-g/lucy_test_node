@@ -12,9 +12,12 @@ const hellocash = {
         }
         return (await axios.post(`${baseURL}/authenticate`,body)).data.token;
     },
-    getInvoices: async (param,token)=>{
+    getInvoices: async (param,token,id)=>{
+        let url = `${baseURL}/invoices`
+        if(id)
+           url = `${baseURL}/invoices/${id}`
         let config = {
-            url: `${baseURL}/invoices`,
+            url: url,
             method: "get",
             headers: {authorization:`Bearer ${token}`},
             params: param
@@ -47,9 +50,12 @@ const hellocash = {
         }  
         return (await axios(config)).data;
     },
-    getTransfers: async (param,token)=>{
+    getTransfers: async (param,token,id)=>{
+        let url = `${baseURL}/transfers`
+        if(id)
+           url = `${baseURL}/transfers/${id}`
         let config = {
-            url: `${baseURL}/transfers`,
+            url: url,
             method: "get",
             headers: {authorization:`Bearer ${token}`},
             params: param
@@ -74,7 +80,7 @@ const hellocash = {
         }
         return (await axios(config)).data;
     },
-    authrizeTransfer: async (id,token)=>{
+    authorizeTransfer: async (id,token)=>{
         let config = {
             url: `${baseURL}/transfers/authorize`,
             method: "post",
@@ -82,8 +88,44 @@ const hellocash = {
             data : [id]
         }
         return (await axios(config)).data;
+    },
+    transferBatch: async (batch,token)=>{
+        let config = {
+            url: `${baseURL}/transfers/batch`,
+            method: 'post',
+            headers: {authorization:`Bearer ${token}`},
+            data: batch
+        }
+        return (await axios(config)).data;
+    },
+    cancelTransfers: async (idList, token)=>{
+        let config = {
+            url: `${baseURL}/transfers/cancel`,
+            method: 'post',
+            headers: {authorization:`Bearer ${token}`},
+            data: idList
+        }
+        return (await axios(config)).data;
+    },
+    replaceTransfer: async (id,invoice,token) => {
+        let config = {
+            url: `${baseURL}/transfers/${id}`,
+            method: 'put',
+            headers: {authorization:`Bearer ${token}`},
+            data: invoice
+        }
+        return (await axios(config)).data;
+    },
+    getAirTime: async (id,token) => {
+        let config = {
+            url: `${baseURL}/transfers/${id}`,
+            method: 'get',
+            headers: {authorization:`Bearer ${token}`},
+        }
+        return (await axios(config)).data;
     }
 }
+
 
 exports = hellocash
 
